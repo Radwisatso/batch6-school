@@ -2,7 +2,7 @@
   "name": "batch-6",
   "scripts": {
     "dev": "bun run --hot src/index.ts",
-    "prestart": "bunx prisma migrate dev",
+    "prestart": "bunx prisma migrate deploy",
     "start": "bun run src/index.ts"
   },
   "dependencies": {
