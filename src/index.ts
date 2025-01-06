@@ -48,6 +48,15 @@ app.get("/mentors", async (c) => {
   );
 });
 
+app.get("/students", async (c) => {
+  const students = await prisma.student.findMany()
+  return c.json({
+    status: "success",
+    message: "Successfully get students",
+    data: students
+  })
+})
+
 // Update a mentor
 app.patch("/mentors/:username", async (c) => {
   const name = c.req.param("username");
